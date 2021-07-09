@@ -48,7 +48,6 @@ class HomeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        // dd(!empty($request->password));
         $request->validate([
             'name' => 'required|string|max:255',
             'contact' => 'required|max:10',

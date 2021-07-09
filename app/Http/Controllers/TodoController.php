@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class UserController extends Controller
+class TodoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +13,9 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        $todos = \App\Todo::all();
+        // dd($todos);
+        return view('todo', compact('todos'));
     }
 
     /**
@@ -34,7 +36,20 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request);
+        $request->validate([
+            'tododate' => 'required',
+            'todotask' => 'required',
+        ]);
+
+        $todo = new \App\Todo();
+
+        $todo->tododate = $request->tododate;
+        $todo->todotask = $request->todotask;
+        $todo->save();
+
+        return redirect('/todo')
+            ->with('success', 'Todo task created successfully');
     }
 
     /**
