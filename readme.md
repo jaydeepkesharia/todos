@@ -15,5 +15,5 @@
 - then copy example.env file and paste it in newly created .env file
 - then add mysql database details as per ur local database 
 - then run migration through "php artisan migrate" command for databse structure creation 
-- or i put dumb folder u can import it also if u want 
-- In case u used my dumb folder,then I used "todo@list.com" and "12345678" as my uname and password
+- or i put dump folder u can import it also if u want 
+- In case u used my dump folder,then I used "todo@list.com" and "12345678" as my uname and password
